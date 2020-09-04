@@ -17,21 +17,22 @@ function check_input(){
 		flag = false;
 	}else{
 		error.textContent = "";
-		value_Y = input.value.replace(/[,]/,".");
-		if(value_Y<-5 && value_Y>5){
+		let y = input.value.replace(/[,]/,".");
+		if(y<-5 || y>5){
 			error.textContent = "Ошибка: Выход за пределы, введите число в интервале [-5;5]";
 			input.value = "";
 			flag = false;
-		}else if(Number(value_Y.split(".")[0]) >=5 && Number(value_Y.split(".")[1])>0){
+		}else if(Number(y.split(".")[0]) >=5 && Number(y.split(".")[1])>0){
 			error.textContent = "Ошибка: Выход за пределы, введите число в интервале [-5;5]";
 			input.value = "";
 			flag = false;
-		}else if(Number(value_Y.split(".")[0]) <=-5 && Number(value_Y.split(".")[1])>0){
+		}else if(Number(y.split(".")[0]) <=-5 && Number(y.split(".")[1])>0){
 			error.textContent = "Ошибка: Выход за пределы, введите число в интервале [-5;5]";
 			input.value = "";
 			flag = false;
 		}else {
 			document.getElementById('label_y').innerText = "Y = " + input.value;
+			value_Y = input.value.replace(/[,]/,".");
 			flag = true;
 		}
 	}

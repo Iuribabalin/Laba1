@@ -29,28 +29,7 @@ function postData(){
             }
         });
         xhr.send(body);
-    }	if(!/^-?\d+(\.|,)?\d*$/i.test(input.value)){
-		alert("Значение \"Y\" не валидно");
-		input.value = "";
-		flag = false;
-	}else if(input.value.replace(/[,]/,".") >= -5 && input.value.replace(/[,]/,".") <= 5){
-		if(/(\.|,)$/i.test(input.value)){
-			alert("Значение \"Y\" не валидно");
-			input.value = "";
-			flag = false;
-		}else{
-			value_Y = input.value.replace(/[,]/,".");
-			document.getElementById('label_y').innerText = "Y = " + input.value;
-			flag = true;
-		}
-	}else if(/(\.|,)$/i.test(input.value)) {
-		alert("Значение \"Y\" не валидно");
-		input.value = "";
-		flag = false;
-	}else{
-		alert("Выход за пределы, введите число в интервале [-5;5]");
-		flag = false;
-	}
+    }
 }
 
 function check_good_php(param) {
