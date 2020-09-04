@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Laba1</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+</head>
+    <body>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="2" class="table">
+                        <a class="header-text">Бабалин Юрий Алексеевич, P3214, вариант 2503 </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="pole_cnvs">
+                    <td class="cnvs" colspan="2">
+                        <img src="resources/cat_pc.gif">
+                        <canvas id="canvas"></canvas>
+                        <img src="resources/cat_pc.gif">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table">
+                        <a id="label_x">X = 0</a>
+                    </td>
+                    <td class="table">
+                        <button class="button" type="button" value="-3" id="bm3" name="X" onclick="set_X(id)">-3</button>
+                        <button class="button" type="button" value="-2" id="bm2" name="X" onclick="set_X(id)">-2</button>
+                        <button class="button" type="button" value="-1" id="bm1" name="X" onclick="set_X(id)">-1</button>
+                        <button class="button" type="button" value="0" id="b0" name="X" onclick="set_X(id)">0</button>
+                        <button class="button" type="button" value="1" id="b1" name="X" onclick="set_X(id)">1</button>
+                        <button class="button" type="button" value="2" id="b2" name="X" onclick="set_X(id)">2</button>
+                        <button class="button" type="button" value="3" id="b3" name="X" onclick="set_X(id)">3</button>
+                        <button class="button" type="button" value="4" id="b4" name="X" onclick="set_X(id)">4</button>
+                        <button class="button" type="button" value="5" id="b5" name="X" onclick="set_X(id)">5</button>
+                </td>
+                </tr>
+
+                <tr>
+                    <td class="table">
+                        <a id="label_y">Y = 0</a>
+                    </td>
+                    <td class="table">
+                       <input type="text" id="y_param" name="y">
+                        <a class="error" type="text" id="Error"></a>
+                </td>
+                </tr>
+
+                <tr>
+                    <td class="table">
+                        <a id="label_r">R = 5</a>
+                    </td>
+                    <td class="table">
+                        <input type="radio" id="r1" name="R" value="1" onclick="draw()">1
+
+                        <input type="radio" id="r2" name="R" value="2" onclick="draw()">2
+
+                        <input type="radio" id="r3" name="R" value="3" onclick="draw()">3
+
+                        <input type="radio" id="r4" name="R" value="4" onclick="draw()">4
+
+                        <input type="radio" id="r5" name="R" value="5" onclick="draw()" checked>5
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="table">
+                        <label>Кнопка ввода значений</label>
+                    </td>
+                    <td>
+                        <form action="treatment.php" method="POST">
+                            <button type="button" id="button" name="out_button">Ввод параметров</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <table class="result-table">
+                            <thead>
+                                <td>X</td>
+                                <td>Y</td>
+                                <td>R</td>
+                                <td>RESULT</td>
+                                <td>Current time</td>
+                                <td>Computation time</td>
+                            </thead>
+                            <tbody id="table_out">
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="Code_js/draw.js"></script>
+        <script src="Code_js/Valid.js"></script>
+        <script src="Code_js/post_out.js"></script>
+        <script src="Code_js/addToTable.js"></script>
+    </body>
+</html>
