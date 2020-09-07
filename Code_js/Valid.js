@@ -36,7 +36,6 @@ function check_input(){
 			flag = true;
 		}
 	}
-
 }
 
 let button = document.getElementById("button");

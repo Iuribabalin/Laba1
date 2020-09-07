@@ -18,7 +18,7 @@ function get_R_value(){
 }
 
 function drawPoint(x,y,r) {
-    if(x > r+5 || y > r+5 || x < -1 * r-5 || y < -1 *r-5 ){
+    if(x > r || y > r || x < -1 * r || y < -1 *r ){
         alert('Выход за пределы видимости графика\nНе могу отобразить точку');
         draw();
     }else {
