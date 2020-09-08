@@ -34,7 +34,7 @@ function postData(){
 
 function check_good_php(param) {
     if(param.split("/")[0].split(";")[0] === '1'){
-        alert("Ошибка в отправленных данных");
+        alert("Ошибка в отправленных данных, возможно вы использовали слишком много чисел после запятой");
     }else{
         drawPoint(value_X * 10, saveY * 10, R * 10);
         return param;
@@ -50,22 +50,19 @@ function delete_Virgule(value){
 }
 
 function analysis_param(analysis, name){
-    if(name === "Y") {
+    if(name == "Y") {
         if (Number(analysis.split(".")[0]) == R && Number(analysis.split(".")[1]) > 0) {
             value_Y = Number(value_Y) + 1
         } else if (Number(analysis.split(".")[0]) <= -R && Number(analysis.split(".")[1]) > 0) {
             value_Y = Number(value_Y) + 1
         }
     }else{
-        if(analysis === "-3" || analysis === "-2" || analysis === "-1" || analysis === "0" || analysis === "1" || analysis === "2"
-            || analysis === "3" || analysis === "4" || analysis === "5"){
+        if(analysis == -3 || analysis == -2 || analysis == -1 || analysis == 0 || analysis == 1 || analysis == 2
+            || analysis == 3 || analysis == 4 || analysis == 5){
             flagErrorX = false;
         }else{
             flagErrorX = true;
-            if(analysis === 0){
-                flagErrorX = false;
-            }else
-                alert("Не трогайте, пожалуйста, 'X' он хороший =)")
+            alert("Не трогайте, пожалуйста, 'X' он хороший =)")
         }
     }
 }

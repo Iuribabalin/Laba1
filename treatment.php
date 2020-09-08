@@ -4,6 +4,7 @@
     $x = $_POST['x'];
     $y = $_POST['y'];
     $yy = $_POST['YY'];
+    $max = 17;
     $out = "";
     $flag = 0;
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,6 +18,9 @@
             $flag = 1;
         if($y<-5 || $y>5)
             $flag = 1;
+        if(strlen($y) > $max || strlen($x) > $max || strlen($r) > $max){
+            $flag = 1;
+        }
 
         if(((($x*$x + $y*$y) <= $r*$r && $x >=0 && $y >= 0)||
             ($y-$x<=$r/2 && $x<=0 && $y>=0)||
